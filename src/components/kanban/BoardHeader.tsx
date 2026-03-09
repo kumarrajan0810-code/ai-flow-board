@@ -27,6 +27,7 @@ interface BoardHeaderProps {
 }
 
 export function BoardHeader({ title, onRename, onAddColumn, filters, onFiltersChange, assignees }: BoardHeaderProps) {
+  const { signOut } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(title);
 

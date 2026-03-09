@@ -142,6 +142,11 @@ export function BoardHeader({ title, onRename, onAddColumn, filters, onFiltersCh
         >
           <Plus className="w-4 h-4" /> Add Column
         </Button>
+
+        {/* Sign out */}
+        <Button variant="ghost" size="sm" className="h-9 gap-1.5 text-muted-foreground" onClick={signOut}>
+          <LogOut className="w-4 h-4" />
+        </Button>
       </div>
     </header>
   );

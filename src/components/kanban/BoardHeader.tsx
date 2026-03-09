@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Filter, Plus, Search, X, LayoutGrid } from 'lucide-react';
+import { Filter, Plus, Search, X, LayoutGrid, LogOut } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Filter, Plus, Search, X, LayoutGrid } from 'lucide-react';
+import { Filter, Plus, Search, X, LayoutGrid, LogOut } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -26,6 +27,7 @@ interface BoardHeaderProps {
 }
 
 export function BoardHeader({ title, onRename, onAddColumn, filters, onFiltersChange, assignees }: BoardHeaderProps) {
+  const { signOut } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(title);
 
@@ -139,6 +141,11 @@ export function BoardHeader({ title, onRename, onAddColumn, filters, onFiltersCh
           }}
         >
           <Plus className="w-4 h-4" /> Add Column
+        </Button>
+
+        {/* Sign out */}
+        <Button variant="ghost" size="sm" className="h-9 gap-1.5 text-muted-foreground" onClick={signOut}>
+          <LogOut className="w-4 h-4" />
         </Button>
       </div>
     </header>
